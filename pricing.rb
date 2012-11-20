@@ -32,9 +32,11 @@ def discrepancies
 		end
 	end
 	total_error = underscans + overscans + nof
-	error_rate = ((total_error / total_scans) * 100).to_f
-	puts "---SUMMARY--- \n Total Errors: #{total_error} \n Overscans: #{overscans} \n Underscans: #{underscans} \n NOF: #{nof} \n Scan Total: #{total_scans}"	
-	puts "#{error_rate} %"
+	error_rate = sprintf('%.2f', (total_error.to_f / total_scans.to_f * 100.0)) + "%"
+	underscan_rate = sprintf('%.2f', (underscans.to_f / total_scans.to_f * 100.0)) + "%"
+	overscan_rate = sprintf('%.2f', (overscans.to_f / total_scans.to_f * 100.0)) + "%"
+	nof_rate = sprintf('%.2f', (nof.to_f / total_scans.to_f * 100.0)) + "%"
+	puts "---SUMMARY--- \n Total Errors: #{total_error}  Error Rate: #{error_rate} \n Overscans: #{overscans} Error Rate: #{overscan_rate} \n Underscans: #{underscans} Error Rate: #{underscan_rate} \n NOF: #{nof}  Error Rate: #{nof_rate}\n Scan Total: #{total_scans}"	
 end
 
 
