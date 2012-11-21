@@ -14,21 +14,19 @@ def discrepancies
 	@file.each do |line|
 		display_price = line[:display_price]
 		scan_price = line[:scan_price]
+		total_scans += 1
 		if display_price.to_f > scan_price.to_f and scan_price.to_f != 0.0
 			underscans += 1
-			total_scans += 1
 			puts "---UNDERSCAN--- \n Display Price: #{display_price} \n Scan Price: #{scan_price}"
 		elsif display_price.to_f > scan_price.to_f and scan_price.to_f == 0.0
 			nof += 1
-			total_scans += 1
 			puts "---NOF--- \n Display Price: #{display_price}"
 		elsif
 			display_price.to_f < scan_price.to_f 
 			overscans += 1
-			total_scans += 1
 			puts "---OVERSCAN--- \n Display Price: #{display_price} \n Scan Price: #{scan_price}"
 		else
-			total_scans += 1
+			#do nothing
 		end
 	end
 	total_error = underscans + overscans + nof
