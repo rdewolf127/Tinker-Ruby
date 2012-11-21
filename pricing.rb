@@ -27,8 +27,7 @@ def discrepancies
 			nof_error_count += 1
 			nof_error_sum += display_price.to_f
 			#puts "---NOF--- \n Display Price: #{display_price}"
-		elsif
-			display_price.to_f < scan_price.to_f 
+		elsif display_price.to_f < scan_price.to_f 
 			overscan_error_count += 1
 			overscan_error_sum += error_sum_calc.abs
 			#puts "---OVERSCAN--- \n Display Price: #{display_price} \n Scan Price: #{scan_price}"
