@@ -32,8 +32,6 @@ def discrepancies
 			overscan_error_count += 1
 			overscan_error_sum += error_sum_calc.abs
 			#puts "---OVERSCAN--- \n Display Price: #{display_price} \n Scan Price: #{scan_price}"
-		else
-			#do nothing
 		end
 	end
 	total_error = underscan_error_count + overscan_error_count + nof_error_count
